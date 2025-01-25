@@ -17,20 +17,11 @@ def gen_frames():
             break
         else:
             try:
-                # Analyze the frame for emotions
                 results = DeepFace.analyze(frame, actions=['emotion'], enforce_detection=False)
                 result = results[0] if isinstance(results, list) else results
-                
-                if result and 'dominant_emotion' in result:
-                    detected_emotion = result['dominant_emotion']
-                else:
-                    detected_emotion = "No face detected"
-
-                # Display emotion on the video feed
-                cv2.putText(frame, f"Emotion: {detected_emotion}", (50, 50), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                detected_emotion = result['dominant_emotion']
+                cv2.putText(frame, f"Emotion: {detected_emotion}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             except Exception as e:
-                detected_emotion = "No face detected"
                 print(f"Error: {e}")
 
             ret, buffer = cv2.imencode('.jpg', frame)
@@ -50,10 +41,7 @@ def video_feed():
 def recommend_music():
     global detected_emotion
     print(f"Detected Emotion: {detected_emotion}")  # Log the detected emotion
-    
-    if detected_emotion == "No face detected":
-        return jsonify({"emotion": "No face detected", "message": "Please ensure your face is visible to the camera."})
-    elif detected_emotion:
+    if detected_emotion:
         playlist_uri = get_playlist_for_mood(detected_emotion, sp)
         if playlist_uri:
             print(f"Returning playlist URI: {playlist_uri}")
@@ -62,6 +50,7 @@ def recommend_music():
             return jsonify({"error": "No playlist found for the detected emotion"}), 404
     else:
         return jsonify({"error": "No emotion detected yet"}), 400
+
 
 if __name__ == '__main__':
     app.run(debug=True)
