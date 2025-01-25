@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    position: sticky;
+}
+
+img {
+    transform: none;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    color: #fff;
+    border-bottom: 1px solid gray;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+}
+
+.header .login-btn {
+    background-color: #fff;
+    color: #1db954;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header .login-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.video-section,
+.result-section {
+    margin-bottom: 20px;
+}
+
+.video-section h2,
+.result-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.video-feed {
+    width: 400px; /* Adjust the width */
+    height: 500px; /* Adjust the height */
+    border: 1px solid black; /* Optional border */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.video-container img {
+    width: 70%;
+    border-radius: 10px;
+    border: 3px solid #1db954;
+}
+
+.fetch-btn {
+    display: block;
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.fetch-btn:hover {
+    background-color: #14833b;
+}
+
+.result {
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.result p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.playlist-link {
+    color: #1db954;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.playlist-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1c1c1c;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+.footer p {
+    margin: 0;
+    color: #bbb;
+}
