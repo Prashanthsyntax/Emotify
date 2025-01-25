@@ -6,8 +6,8 @@ from spotify_integration import authenticate_spotify, get_playlist_for_mood
 app = Flask(__name__)
 camera = cv2.VideoCapture(0)
 
-sp = authenticate_spotify()  # Initialize Spotify API client
-detected_emotion = None  # Variable to store the current detected emotion
+sp = authenticate_spotify()  
+detected_emotion = None 
 
 def gen_frames():
     global detected_emotion
@@ -40,7 +40,7 @@ def video_feed():
 @app.route('/recommend-music', methods=['GET'])
 def recommend_music():
     global detected_emotion
-    print(f"Detected Emotion: {detected_emotion}")  # Log the detected emotion
+    print(f"Detected Emotion: {detected_emotion}") 
     if detected_emotion:
         playlist_uri = get_playlist_for_mood(detected_emotion, sp)
         if playlist_uri:
