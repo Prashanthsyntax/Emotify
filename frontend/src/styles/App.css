@@ -1,0 +1,119 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif; /* Spotify-inspired dark theme */
+  color: white;
+  background-color: #09122C;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid white;
+
+}
+
+.slogan{
+  color:#00ddf4;
+  font-size: 25px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.login-btn {
+  background: rgb(30,255,125);
+  background: linear-gradient(90deg, rgba(30,255,125,1) 31%, rgba(0,255,82,1) 99%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+/* Container for the main content, applying flex layout */
+.main-content {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+  gap: 30px; /* Optional: adjust gap between sections */
+  flex-grow: 1;
+}
+
+/* Left section (for results) */
+.result-section {
+  flex: 1; /* Allow it to take available space */
+  margin-top: 30px;
+  margin-left: 500px;
+}
+
+/* Right section (for buttons and video section) */
+.video-section {
+  width: 300px; /* Set a fixed width for the right section */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Button container */
+.fetch-btn {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Error message */
+.error-message {
+  color: red;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Emotion text */
+.emotion-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Playlist link */
+.playlist-link {
+  display: inline-block;
+  background-color: #1DB954;
+  padding: 12px 20px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.playlist-link:hover {
+  background-color: #1ed760;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid white;
+}
+
